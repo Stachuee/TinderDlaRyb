@@ -2,11 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class WardrobeItem : MonoBehaviour, IDragHandler, IDropHandler
+public class WardrobeItem : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
 	[SerializeField] ClothesSO item;
+
+	Image image;
+	RectTransform rectTransform;
+
 	Vector2 startPos;
+
+	private void Awake()
+	{
+		rectTransform = GetComponent<RectTransform>();
+		image = GetComponent<Image>();
+	}
 
 	private void Start()
 	{
@@ -23,12 +34,22 @@ public class WardrobeItem : MonoBehaviour, IDragHandler, IDropHandler
 		transform.position = Input.mousePosition;
 	}
 
-	public void OnDrop(PointerEventData eventData)
+	public void OnEndDrag(PointerEventData eventData)
 	{
-		if(transform.position.x < Screen.width / 2)
+		if (transform.position.x < Screen.width / 2)
 		{
 			Fish.Instance.ChangeClothes(item);
 		}
-		transform.position = startPos;
+		rectTransform.position = startPos;
+	}
+
+	public void OnPointerEnter(PointerEventData eventData)
+	{
+		image.color = Color.gray;
+	}
+
+	public void OnPointerExit(PointerEventData eventData)
+	{
+		image.color = Color.white;
 	}
 }

@@ -8,6 +8,8 @@ public class Wardrobe : MonoBehaviour
 
 	[SerializeField] List<Transform> wardrobeSegments;
 
+	int current;
+
 	private void Awake()
 	{
 		if(wardrobe == null)
@@ -20,4 +22,12 @@ public class Wardrobe : MonoBehaviour
 		}
 	}
 
+
+	public void ChangeFloor(int change)
+	{
+		wardrobeSegments[current].gameObject.SetActive(false);
+		current += change;
+		current = Mathf.Clamp(current, 0, wardrobeSegments.Count - 1);
+		wardrobeSegments[current].gameObject.SetActive(true);
+	}
 }

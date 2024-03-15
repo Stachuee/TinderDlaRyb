@@ -6,7 +6,7 @@ public class Fish : MonoBehaviour
 {
     public static Fish Instance;
 
-    [SerializeField] List<SpriteRenderer> clothes;
+    [SerializeField] List<FishClothes> clothes;
 
 	private void Awake()
 	{
@@ -23,6 +23,18 @@ public class Fish : MonoBehaviour
 
 	public void ChangeClothes(ClothesSO clothes)
 	{
-		this.clothes[(int)clothes.GetClothesType()].sprite = clothes.GetSprite();
+		this.clothes[(int)clothes.GetClothesType()].SetItem(clothes);
+	}
+
+	public Stats GetFinalStats()
+	{
+		Stats stats = new Stats();
+
+		clothes.ForEach(c =>
+		{
+			if(c.GetItem() != null)
+			stats += c.GetItem().GetStats();
+		});
+		return stats;
 	}
 }

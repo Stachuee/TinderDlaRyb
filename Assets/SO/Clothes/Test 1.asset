@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20b0d50fdeb40064c829177b96fe01c0, type: 3}
   m_Name: Test 1
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 9125c204f566db048a92ebcb64d9d14a, type: 3}
   stats:
     statOne: 0
-    statTwo: 0
+    statTwo: 0.5
     statThree: 0
     statFour: 0
     statFive: 0
+  type: 0

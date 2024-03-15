@@ -12,14 +12,14 @@ public struct Stats
 	public float statFour;
 	public float statFive;
 
-	public static float Compare(Stats one, Stats two)
+	public static float Compare(Stats player, Stats two)
 	{
 		float dist = 0;
-		dist += Mathf.Abs(one.statOne - two.statOne);
-		dist += Mathf.Abs(one.statTwo - two.statTwo);
-		dist += Mathf.Abs(one.statThree - two.statThree);
-		dist += Mathf.Abs(one.statFour - two.statFour);
-		dist += Mathf.Abs(one.statFive - two.statFive);
+		dist += Mathf.Min(player.statOne - two.statOne, 0);
+		dist += Mathf.Min(player.statTwo - two.statTwo, 0);
+		dist += Mathf.Min(player.statThree - two.statThree, 0);
+		dist += Mathf.Min(player.statFour - two.statFour, 0);
+		dist += Mathf.Min(player.statFive - two.statFive, 0);
 		return dist;
 	}
 
@@ -35,7 +35,7 @@ public struct Stats
 	}
 
 }
-
+[System.Serializable]
 public class Character 
 {
 	public Sprite characterSprite;

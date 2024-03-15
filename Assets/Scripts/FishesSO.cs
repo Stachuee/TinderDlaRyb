@@ -9,4 +9,5 @@ public class FishesSO : ScriptableObject
 	[SerializeField] Stats stats;
 
 	public Sprite GetIcon() { return icon; }
+	public Stats GetStats() { return stats; }
 }

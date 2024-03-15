@@ -11,6 +11,8 @@ public class CharacterCreator : MonoBehaviour
 
 	[SerializeField] Vector2Int minMaxDescParts;
 
+	[SerializeField] Character currentCharacter;
+
 	private void Awake()
 	{
 		if (Instance == null) Instance = this;
@@ -22,7 +24,8 @@ public class CharacterCreator : MonoBehaviour
 
 	private void Start()
 	{
-		//TinderPhone.Instance.SetNewProfile(CreateCharacter());
+		currentCharacter = CreateCharacter();
+		TinderPhone.Instance.SetNewProfile(currentCharacter);
 	}
 
 	public Character CreateCharacter()
@@ -50,7 +53,14 @@ public class CharacterCreator : MonoBehaviour
 			stats += part.GetStats();
 		});
 
+		FishesSO fishPortrait = characterList[Random.Range(0, characterList.Count)];
+		stats += fishPortrait.GetStats();
 
-		return new Character(characterList[Random.Range(0, characterList.Count)], NameGenerator.GenerateName(), desc, stats);
+		return new Character(fishPortrait, NameGenerator.GenerateName(), desc, stats);
+	}
+
+	public Character GetCurrentLove()
+	{
+		return currentCharacter;
 	}
 }
