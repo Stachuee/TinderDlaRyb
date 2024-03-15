@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CamController : MonoBehaviour
+public class CamController : MonoBehaviour, IAnimObserver
 {
 	public static CamController Instance;
 
@@ -27,6 +27,8 @@ public class CamController : MonoBehaviour
 	private void Start()
 	{
 		currentTarget = CameraPositions[0];
+
+		AnimStateController.Instance.AddAnimObserver(this);
 	}
 
 	private void Update()
@@ -46,5 +48,18 @@ public class CamController : MonoBehaviour
 		{
 			Gizmos.DrawWireSphere(pos, 1);
 		});
+	}
+
+	public void ChangeAnim(AnimStateController.AnimState newAnimState)
+	{
+		switch(newAnimState)
+		{
+			case AnimStateController.AnimState.MainMenu:
+				SwitchCam(0);
+				break;
+			case AnimStateController.AnimState.MainGame: 
+				SwitchCam(1);
+				break;
+		}
 	}
 }

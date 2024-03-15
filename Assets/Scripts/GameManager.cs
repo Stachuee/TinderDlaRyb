@@ -23,10 +23,6 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	private void Start()
-	{
-		StartTimer();
-	}
 
 	private void Update()
 	{
@@ -49,6 +45,11 @@ public class GameManager : MonoBehaviour
 	public void End()
 	{
 		Debug.Log(Stats.Compare(Fish.Instance.GetFinalStats(), CharacterCreator.Instance.GetCurrentLove().characterStats));
+	}
+
+	public void StartGame()
+	{
+		AnimStateController.Instance.ChangeAnimState(AnimStateController.AnimState.StartingAnim);
 	}
 
 	public float GetCurrentTimerProgress()

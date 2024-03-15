@@ -22,11 +22,12 @@ public class WardrobeItem : MonoBehaviour, IDragHandler, IEndDragHandler, IPoint
 	private void Start()
 	{
 		StartCoroutine(SetPosition());
+		image.sprite = item.GetSprite();
 	}
 	IEnumerator SetPosition()
 	{
 		yield return new WaitForEndOfFrame();
-		startPos = transform.position;
+		startPos = transform.localPosition;
 	}
 
 	public void OnDrag(PointerEventData eventData)
@@ -40,7 +41,7 @@ public class WardrobeItem : MonoBehaviour, IDragHandler, IEndDragHandler, IPoint
 		{
 			Fish.Instance.ChangeClothes(item);
 		}
-		rectTransform.position = startPos;
+		rectTransform.localPosition = startPos;
 	}
 
 	public void OnPointerEnter(PointerEventData eventData)
