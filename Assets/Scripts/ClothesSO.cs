@@ -11,4 +11,17 @@ public class ClothesSO : ScriptableObject
 	[SerializeField] Sprite sprite;
 	[SerializeField] Stats stats;
 	[SerializeField] ClothesType type; 
+
+	public Sprite GetSprite()
+	{
+		return sprite;
+	}
+	public Stats GetStats()
+	{
+		return stats;
+	}
+	public ClothesType GetClothesType()
+	{
+		return type;
+	}
 }

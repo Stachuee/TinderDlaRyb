@@ -7,4 +7,6 @@ public class FishesSO : ScriptableObject
 {
 	[SerializeField] Sprite icon;
 	[SerializeField] Stats stats;
+
+	public Sprite GetIcon() { return icon; }
 }

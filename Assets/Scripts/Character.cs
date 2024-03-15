@@ -23,12 +23,32 @@ public struct Stats
 		return dist;
 	}
 
+	public static Stats operator+(Stats one, Stats two)
+	{
+		Stats val = new Stats();
+		val.statOne = one.statOne + two.statOne;
+		val.statTwo = one.statTwo + two.statTwo;
+		val.statThree = one.statThree + two.statThree;
+		val.statFour = one.statFour + two.statFour;
+		val.statFive = one.statFive + two.statFive;
+		return val;
+	}
+
 }
 
 public class Character 
 {
 	public Sprite characterSprite;
 	public string characterName;
+	public string characterDesc;
+	public Stats characterStats;
 
-	public Stats stats;
+	public Character(FishesSO fish, string name, string desc, Stats stats)
+	{
+		characterSprite = fish.GetIcon();
+		characterName = name;
+		characterDesc = desc;
+		characterStats = stats;
+	}
+
 }

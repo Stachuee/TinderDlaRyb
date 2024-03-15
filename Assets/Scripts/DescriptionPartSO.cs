@@ -7,4 +7,14 @@ public class DescriptionPartSO : ScriptableObject
 {
 	[SerializeField] string descriptionPart;
 	[SerializeField] Stats stats;
+
+	public string GetDesc()
+	{
+		return descriptionPart;
+	}
+
+	public Stats GetStats()
+	{
+		return stats;
+	}
 }
