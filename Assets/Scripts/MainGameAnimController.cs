@@ -29,6 +29,9 @@ public class MainGameAnimController : MonoBehaviour, IAnimObserver
 			case AnimStateController.AnimState.MainMenu:
 				animator.SetBool("InGame", false);
 				break;
+			case AnimStateController.AnimState.EndAnim:
+				animator.SetBool("InGame", false);
+				break;
 		}
 	}
 

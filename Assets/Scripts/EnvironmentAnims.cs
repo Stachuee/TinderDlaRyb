@@ -37,6 +37,9 @@ public class EnvironmentAnims : MonoBehaviour, IAnimObserver
 			case AnimStateController.AnimState.MainMenu:
 				animator.SetTrigger("TriggerReset");
 				break;
+			case AnimStateController.AnimState.EndAnim:
+				animator.SetTrigger("TriggerEnd");
+				break;
 		}
 	}
 

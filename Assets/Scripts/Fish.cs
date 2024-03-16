@@ -21,6 +21,11 @@ public class Fish : MonoBehaviour, IAnimObserver
 		}
 	}
 
+	private void Start()
+	{
+		AnimStateController.Instance.AddAnimObserver(this);
+	}
+
 
 	public void ChangeClothes(ClothesSO clothes)
 	{

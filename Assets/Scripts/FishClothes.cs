@@ -11,7 +11,15 @@ public class FishClothes : MonoBehaviour
 	public void SetItem(ClothesSO item)
     {
         this.item = item;
-        spriteRenderer.sprite = item.GetSprite();
+        if(item != null)
+        {
+			spriteRenderer.sprite = item.GetSprite();
+		}
+        else
+        {
+            spriteRenderer.sprite = null;
+        }
+        
     }
 
     public void RemoveItem()

@@ -29,6 +29,11 @@ public class MainMenuAnimController : MonoBehaviour, IAnimObserver
 				ShowCredits(false);
 				ShowOptions(false);
 				break;
+			case AnimStateController.AnimState.EndAnim:
+				animator.SetBool("MenuShown", false);
+				ShowCredits(false);
+				ShowOptions(false);
+				break;
 		}
 	}
 

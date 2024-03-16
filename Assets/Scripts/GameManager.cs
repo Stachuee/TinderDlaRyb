@@ -11,6 +11,11 @@ public class GameManager : MonoBehaviour, IAnimObserver
 	[SerializeField] float timeToFinish;
 	float timeRemain;
 
+	[SerializeField] float maxScore;
+	[SerializeField] float worstScore;
+
+	public float score;
+
 	private void Awake()
 	{
 		if(Instance == null)
@@ -50,7 +55,11 @@ public class GameManager : MonoBehaviour, IAnimObserver
 	public void End()
 	{
 		timerActive = false;
-		Debug.Log(Stats.Compare(Fish.Instance.GetFinalStats(), CharacterCreator.Instance.GetCurrentLove().characterStats));
+		AnimStateController.Instance.ChangeAnimState(AnimStateController.AnimState.EndAnim);
+		float curScore = Stats.Compare(Fish.Instance.GetFinalStats(), CharacterCreator.Instance.GetCurrentLove().characterStats);
+		float lerpScore = Mathf.Lerp(0, maxScore,  Mathf.Clamp01(1 - (curScore / worstScore)));
+		score = lerpScore;
+		Debug.Log(lerpScore);
 	}
 
 	public void Exit()
@@ -82,5 +91,10 @@ public class GameManager : MonoBehaviour, IAnimObserver
 				timerActive = false;
 				break;
 		}
+	}
+
+	public float GetTargetFillAmmount()
+	{
+		return score / maxScore;
 	}
 }
