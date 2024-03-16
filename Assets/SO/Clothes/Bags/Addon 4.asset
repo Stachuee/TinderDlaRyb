@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20b0d50fdeb40064c829177b96fe01c0, type: 3}
-  m_Name: Addon 5
+  m_Name: Addon 4
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 09ce389e1b528bf42b13b64421feed31, type: 3}
-  UIsprite: {fileID: -2039532234, guid: 846d518cbdd46104f8bf2a8f2fda768d, type: 3}
+  sprite: {fileID: 21300000, guid: 9a554c931e95ef843b835ff20d710d6d, type: 3}
+  UIsprite: {fileID: 573678160, guid: 34fef07de65d3144abb49673c7820dca, type: 3}
   stats:
     statOne: 0
     statTwo: 0
