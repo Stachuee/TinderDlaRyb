@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class WardrobeItem : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
 	[SerializeField] ClothesSO item;
+	[SerializeField] Image itemUI;
 
 	Image image;
 	RectTransform rectTransform;
@@ -23,7 +24,9 @@ public class WardrobeItem : MonoBehaviour, IDragHandler, IEndDragHandler, IPoint
 	{
 		item = clothes;
 		StartCoroutine(SetPosition());
-		image.sprite = item.GetSprite();
+		//image.sprite = item.GetSprite();
+		itemUI.sprite = item.GetUISprite();
+		itemUI.SetNativeSize();
 	}
 
 	IEnumerator SetPosition()
@@ -48,11 +51,11 @@ public class WardrobeItem : MonoBehaviour, IDragHandler, IEndDragHandler, IPoint
 
 	public void OnPointerEnter(PointerEventData eventData)
 	{
-		image.color = Color.gray;
+		itemUI.color = Color.gray;
 	}
 
 	public void OnPointerExit(PointerEventData eventData)
 	{
-		image.color = Color.white;
+		itemUI.color = Color.white;
 	}
 }

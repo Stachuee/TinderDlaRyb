@@ -14,6 +14,12 @@ public class FishClothes : MonoBehaviour
         spriteRenderer.sprite = item.GetSprite();
     }
 
+    public void RemoveItem()
+    {
+        this.item = null;
+        spriteRenderer.sprite = null;
+    }
+
     public ClothesSO GetItem()
     {
         return item;

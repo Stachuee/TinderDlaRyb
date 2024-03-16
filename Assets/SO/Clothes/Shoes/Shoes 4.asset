@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Shoes 4
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 751b15beed8db2e498d3538f4085a68f, type: 3}
+  UIsprite: {fileID: 1737933846, guid: 9a0481d4633b26441b3207f5e060b5d1, type: 3}
   stats:
     statOne: 0
     statTwo: 0
     statThree: 0
     statFour: 0
     statFive: 0
-  type: 0
+  type: 3

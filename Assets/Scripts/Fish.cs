@@ -23,6 +23,15 @@ public class Fish : MonoBehaviour
 
 	public void ChangeClothes(ClothesSO clothes)
 	{
+		if(clothes.GetClothesType() == ClothesSO.ClothesType.Top || clothes.GetClothesType() == ClothesSO.ClothesType.Bottom)
+		{
+			this.clothes[(int)ClothesSO.ClothesType.FullFit].RemoveItem();
+		}
+		else if(clothes.GetClothesType() == ClothesSO.ClothesType.FullFit)
+		{
+			this.clothes[(int)ClothesSO.ClothesType.Top].RemoveItem();
+			this.clothes[(int)ClothesSO.ClothesType.Bottom].RemoveItem();
+		}
 		this.clothes[(int)clothes.GetClothesType()].SetItem(clothes);
 	}
 

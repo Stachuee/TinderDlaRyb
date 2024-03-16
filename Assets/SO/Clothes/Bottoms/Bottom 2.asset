@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Bottom 2
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: c88da9e068f4b6c47b346ec61afc7317, type: 3}
+  UIsprite: {fileID: 1265232376, guid: 8f8857181f85ba944b1b807b3090c9ec, type: 3}
   stats:
     statOne: 0
     statTwo: 0
     statThree: 0
     statFour: 0
     statFive: 0
-  type: 0
+  type: 1

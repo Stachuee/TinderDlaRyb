@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -105,27 +105,6 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_2129_0
-      rect:
-        serializedVersion: 2
-        x: 791
-        y: 495
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 64a513e759237df4eb3db3727f1b1a67
-      internalID: 789071258
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: IMG_2129_1
       rect:
         serializedVersion: 2
@@ -134,7 +113,7 @@ TextureImporter:
         width: 242
         height: 468
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -158,6 +137,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       IMG_2129_0: 789071258
+      IMG_2129_2: 1334390049
       IMG_2129_1: 1826506750
   spritePackingTag: 
   pSDRemoveMatte: 0

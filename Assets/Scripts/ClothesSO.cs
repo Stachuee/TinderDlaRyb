@@ -9,12 +9,17 @@ public class ClothesSO : ScriptableObject
 	public enum ClothesType {Top, Bottom, FullFit, Shoes, Addon}
 
 	[SerializeField] Sprite sprite;
+	[SerializeField] Sprite UIsprite;
 	[SerializeField] Stats stats;
 	[SerializeField] ClothesType type; 
 
 	public Sprite GetSprite()
 	{
 		return sprite;
+	}
+	public Sprite GetUISprite()
+	{
+		return UIsprite;
 	}
 	public Stats GetStats()
 	{
