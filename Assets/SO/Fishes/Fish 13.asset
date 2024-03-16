@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 69842c6f917e84847b705800ea491eb6, type: 3}
   stats:
-    Sporty: 0
+    Sporty: 0.3
     Cute: 0
     Artsy: 0
     Alternative: 0
-    Classive: 0
+    Classive: 0.7
   name: Joe
   desc: "Nie jestem materialistk\u0105, ale wsiadam tylko do Ferrari \U0001F485\u2728\U0001F607 "

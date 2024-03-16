@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour, IAnimObserver
 	{
 		timerActive = false;
 		AnimStateController.Instance.ChangeAnimState(AnimStateController.AnimState.EndAnim);
-		float curScore = Stats.Compare(Fish.Instance.GetFinalStats(), CharacterCreator.Instance.GetCurrentLove().characterStats);
+		float curScore = Stats.Compare(Fish.Instance.GetFinalStats() / 5, CharacterCreator.Instance.GetCurrentLove().characterStats);
 		float lerpScore = Mathf.Lerp(0, maxScore,  Mathf.Clamp01(1 - (curScore / worstScore)));
 		score = lerpScore;
 		Debug.Log(lerpScore);

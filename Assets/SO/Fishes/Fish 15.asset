@@ -15,7 +15,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: fc190a58903b7b949ae620e70e0bb0ae, type: 3}
   stats:
     Sporty: 0
-    Cute: 0
+    Cute: 1
     Artsy: 0
     Alternative: 0
     Classive: 0

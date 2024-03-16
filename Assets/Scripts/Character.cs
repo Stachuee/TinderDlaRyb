@@ -24,6 +24,17 @@ public struct Stats
 		return dist;
 	}
 
+	public static Stats operator/(Stats one, float two)
+	{
+		Stats val = new Stats();
+		val.Sporty = one.Sporty / two;
+		val.Cute = one.Cute / two;
+		val.Artsy = one.Artsy / two;
+		val.Alternative = one.Alternative / two;
+		val.Classive = one.Classive / two;
+		return val;
+	}
+
 	public static Stats operator+(Stats one, Stats two)
 	{
 		Stats val = new Stats();

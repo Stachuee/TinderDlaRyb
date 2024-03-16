@@ -15,9 +15,9 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 875e4fd4f17d94a42ae60e923c00ba8f, type: 3}
   stats:
     Sporty: 0
-    Cute: 0
+    Cute: 0.7
     Artsy: 0
     Alternative: 0
-    Classive: 0
+    Classive: 0.3
   name: Joe
   desc: "Nie jestem materialistk\u0105, ale wsiadam tylko do Ferrari \U0001F485\u2728\U0001F607 "

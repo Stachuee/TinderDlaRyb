@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 1250d9b0db7da914394e283c47658af0, type: 3}
   stats:
-    Sporty: 0
-    Cute: 0
+    Sporty: 0.8
+    Cute: 0.2
     Artsy: 0
     Alternative: 0
     Classive: 0

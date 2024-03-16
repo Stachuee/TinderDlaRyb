@@ -15,9 +15,9 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 0c1896f3a784847458c48518b72ba64c, type: 3}
   UIsprite: {fileID: -1560326790, guid: 70b3b366c354ee046b9ebc8f23b70762, type: 3}
   stats:
-    Sporty: 0
-    Cute: 0
-    Artsy: 0
+    Sporty: 0.2
+    Cute: 0.1
+    Artsy: 0.7
     Alternative: 0
     Classive: 0
   type: 0

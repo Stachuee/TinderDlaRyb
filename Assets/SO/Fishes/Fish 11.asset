@@ -16,8 +16,8 @@ MonoBehaviour:
   stats:
     Sporty: 0
     Cute: 0
-    Artsy: 0
-    Alternative: 0
+    Artsy: 0.1
+    Alternative: 0.9
     Classive: 0
   name: Joe
   desc: "Nie jestem materialistk\u0105, ale wsiadam tylko do Ferrari \U0001F485\u2728\U0001F607 "
