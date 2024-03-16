@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class EnvironmentAnims : MonoBehaviour, IAnimObserver
 {
+	public static EnvironmentAnims Instance;
 	Animator animator;
 
 	private void Awake()
 	{
+		if(Instance == null)
+		{
+			Instance = this;
+		}
+		else
+		{
+			Debug.LogError("Two enviro animators");
+		}
 		animator = GetComponent<Animator>();
 	}
 
@@ -24,5 +33,11 @@ public class EnvironmentAnims : MonoBehaviour, IAnimObserver
 				animator.SetTrigger("TriggerFirstCutscene");
 				break;
 		}
+	}
+
+	public void ChangeFloors()
+	{
+		animator.SetTrigger("TriggerFloorChange");
+		
 	}
 }

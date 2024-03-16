@@ -11,6 +11,9 @@ public class TinderPhone : MonoBehaviour
     [SerializeField] TextMeshProUGUI fishName;
 	[SerializeField] TextMeshProUGUI fishDesc;
 
+    bool open;
+    Animator animator;
+
 	private void Awake()
 	{
         if (Instance == null)
@@ -21,7 +24,7 @@ public class TinderPhone : MonoBehaviour
         {
             Debug.LogError("Two Phones");
         }
-
+		animator = GetComponent<Animator>();
 	}
 
 	public void SetNewProfile(Character character)
@@ -30,4 +33,11 @@ public class TinderPhone : MonoBehaviour
         fishName.text = character.characterName;
         fishDesc.text = character.characterDesc;
     }
+
+    public void SwitchPhone()
+    {
+        open = !open;
+		animator.SetBool("Shown", open);
+	}
+
 }

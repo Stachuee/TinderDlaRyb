@@ -29,5 +29,7 @@ public class Wardrobe : MonoBehaviour
 		current += change;
 		current = Mathf.Clamp(current, 0, wardrobeSegments.Count - 1);
 		wardrobeSegments[current].gameObject.SetActive(true);
+
+		EnvironmentAnims.Instance.ChangeFloors();
 	}
 }

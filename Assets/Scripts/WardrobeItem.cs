@@ -19,11 +19,13 @@ public class WardrobeItem : MonoBehaviour, IDragHandler, IEndDragHandler, IPoint
 		image = GetComponent<Image>();
 	}
 
-	private void Start()
+	public void SetItem(ClothesSO clothes)
 	{
+		item = clothes;
 		StartCoroutine(SetPosition());
 		image.sprite = item.GetSprite();
 	}
+
 	IEnumerator SetPosition()
 	{
 		yield return new WaitForEndOfFrame();
