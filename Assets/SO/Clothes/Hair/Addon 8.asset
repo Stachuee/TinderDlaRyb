@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20b0d50fdeb40064c829177b96fe01c0, type: 3}
-  m_Name: dddd
+  m_Name: Addon 8
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 0c1896f3a784847458c48518b72ba64c, type: 3}
-  UIsprite: {fileID: -1560326790, guid: 70b3b366c354ee046b9ebc8f23b70762, type: 3}
+  sprite: {fileID: 21300000, guid: b185e1afb9565774797f20275618c56f, type: 3}
+  UIsprite: {fileID: -242034157, guid: a17b6982825b093409be477964ed5a9b, type: 3}
   stats:
     Sporty: 0
-    Cute: 0
+    Cute: 1
     Artsy: 0
     Alternative: 0
     Classive: 0
-  type: 0
+  type: 5
