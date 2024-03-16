@@ -49,7 +49,14 @@ public class GameManager : MonoBehaviour, IAnimObserver
 
 	public void End()
 	{
+		timerActive = false;
 		Debug.Log(Stats.Compare(Fish.Instance.GetFinalStats(), CharacterCreator.Instance.GetCurrentLove().characterStats));
+	}
+
+	public void Exit()
+	{
+		timerActive = false;
+		AnimStateController.Instance.ChangeAnimState(AnimStateController.AnimState.MainMenu);
 	}
 
 	public void StartGame()

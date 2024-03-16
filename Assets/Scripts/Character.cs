@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
 
@@ -49,6 +50,14 @@ public class Character
 		characterName = name;
 		characterDesc = desc;
 		characterStats = stats;
+	}
+
+	public Character(FishesSO fish)
+	{
+		characterSprite = fish.GetIcon();
+		characterName = fish.GetName();
+		characterDesc = fish.GetDesc();
+		characterStats = fish.GetStats();
 	}
 
 }

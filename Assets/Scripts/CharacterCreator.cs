@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class CharacterCreator : MonoBehaviour
@@ -7,6 +8,7 @@ public class CharacterCreator : MonoBehaviour
 	public static CharacterCreator Instance;
 
     [SerializeField] List<FishesSO> characterList;
+	[SerializeField] List<FishesSO> avalibleFishes;
 	[SerializeField] List<DescriptionPartSO> descriptionPartList;
 
 	[SerializeField] Vector2Int minMaxDescParts;
@@ -20,43 +22,26 @@ public class CharacterCreator : MonoBehaviour
 		{
 			Debug.LogError("Dwa controllery na scenie");
 		}
+		avalibleFishes.AddRange(characterList);
 	}
 
 	private void Start()
 	{
 		currentCharacter = CreateCharacter();
 		TinderPhone.Instance.SetNewProfile(currentCharacter);
+
 	}
 
 	public Character CreateCharacter()
 	{
-		Stats stats = new Stats();
-		int parts = Random.Range(minMaxDescParts.x, minMaxDescParts.y);
-		List<DescriptionPartSO> partsList = new List<DescriptionPartSO>();
-		string desc = "";
-
-		for(; partsList.Count < parts;)
+		if(avalibleFishes.Count > 0)
 		{
-			int id = Random.Range(0, descriptionPartList.Count);
-			if (!partsList.Contains(descriptionPartList[id]))
-			{
-				partsList.Add(descriptionPartList[id]);
-			}
-			else if(partsList.Count == descriptionPartList.Count)
-			{
-				break;
-			}
+			avalibleFishes.AddRange(characterList);
 		}
-		partsList.ForEach(part =>
-		{
-			desc += part.GetDesc();
-			stats += part.GetStats();
-		});
-
-		FishesSO fishPortrait = characterList[Random.Range(0, characterList.Count)];
-		stats += fishPortrait.GetStats();
-
-		return new Character(fishPortrait, NameGenerator.GenerateName(), desc, stats);
+		int id = Random.Range(0, avalibleFishes.Count);
+		FishesSO character = avalibleFishes[id];
+		avalibleFishes.RemoveAt(id);
+		return new Character(character);
 	}
 
 	public Character GetCurrentLove()
