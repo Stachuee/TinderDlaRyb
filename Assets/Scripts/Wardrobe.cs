@@ -25,6 +25,7 @@ public class Wardrobe : MonoBehaviour
 
 	public void ChangeFloor(int change)
 	{
+		if (EnvironmentAnims.Instance.CategoryLocked()) return;
 		wardrobeSegments[current].gameObject.SetActive(false);
 		current += change;
 		current = Mathf.Clamp(current, 0, wardrobeSegments.Count - 1);

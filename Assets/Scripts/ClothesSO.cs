@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "SO", menuName = "ScriptableObjects/Clothes", order = 2)]
 public class ClothesSO : ScriptableObject
 {
-	public enum ClothesType {Top, Bottom, FullFit, Shoes, Addon}
+	public enum ClothesType {Top, Bottom, FullFit, Shoes, Addon, Hair, UnderBottom, Bags}
 
 	[SerializeField] Sprite sprite;
 	[SerializeField] Sprite UIsprite;

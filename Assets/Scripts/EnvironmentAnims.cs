@@ -7,6 +7,8 @@ public class EnvironmentAnims : MonoBehaviour, IAnimObserver
 	public static EnvironmentAnims Instance;
 	Animator animator;
 
+	bool elevatorLocked;
+
 	private void Awake()
 	{
 		if(Instance == null)
@@ -37,7 +39,22 @@ public class EnvironmentAnims : MonoBehaviour, IAnimObserver
 
 	public void ChangeFloors()
 	{
+		if(!elevatorLocked)
 		animator.SetTrigger("TriggerFloorChange");
-		
+	}
+
+	public void LockCategory()
+	{
+		elevatorLocked = true;
+	}
+
+	public void UnlockedCategory()
+	{
+		elevatorLocked = false;
+	}
+
+	public bool CategoryLocked()
+	{
+		return elevatorLocked;
 	}
 }

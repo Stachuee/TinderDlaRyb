@@ -34,10 +34,4 @@ public class TinderPhone : MonoBehaviour
         fishDesc.text = character.characterDesc;
     }
 
-    public void SwitchPhone()
-    {
-        open = !open;
-		animator.SetBool("Shown", open);
-	}
-
 }

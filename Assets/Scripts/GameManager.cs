@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour, IAnimObserver
 {
     public static GameManager Instance;
 
@@ -21,6 +21,11 @@ public class GameManager : MonoBehaviour
 		{
 			Debug.LogError("Two game managers");
 		}
+	}
+
+	private void Start()
+	{
+		AnimStateController.Instance.AddAnimObserver(this);
 	}
 
 
@@ -55,5 +60,18 @@ public class GameManager : MonoBehaviour
 	public float GetCurrentTimerProgress()
 	{
 		return 1 - (timeRemain / timeToFinish);
+	}
+
+	public void ChangeAnim(AnimStateController.AnimState newAnimState)
+	{
+		switch(newAnimState)
+		{
+			case AnimStateController.AnimState.MainGame:
+				StartTimer();
+				break;
+			case AnimStateController.AnimState.EndAnim:
+				timerActive = false;
+				break;
+		}
 	}
 }
