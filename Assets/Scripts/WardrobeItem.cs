@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class WardrobeItem : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
+public class WardrobeItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler
 {
 	[SerializeField] ClothesSO item;
 	[SerializeField] Image itemUI;
@@ -57,5 +57,10 @@ public class WardrobeItem : MonoBehaviour, IDragHandler, IEndDragHandler, IPoint
 	public void OnPointerExit(PointerEventData eventData)
 	{
 		itemUI.color = Color.white;
+	}
+
+	public void OnPointerDown(PointerEventData eventData)
+	{
+		Fish.Instance.ChangeClothes(item);
 	}
 }

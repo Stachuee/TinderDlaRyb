@@ -7,31 +7,31 @@ using UnityEngine;
 [System.Serializable]
 public struct Stats
 {
-	public float statOne;
-	public float statTwo;
-	public float statThree;
-	public float statFour;
-	public float statFive;
+	public float Sporty;
+	public float Cute;
+	public float Artsy;
+	public float Alternative;
+	public float Classive;
 
 	public static float Compare(Stats player, Stats two)
 	{
 		float dist = 0;
-		dist += Mathf.Min(player.statOne - two.statOne, 0);
-		dist += Mathf.Min(player.statTwo - two.statTwo, 0);
-		dist += Mathf.Min(player.statThree - two.statThree, 0);
-		dist += Mathf.Min(player.statFour - two.statFour, 0);
-		dist += Mathf.Min(player.statFive - two.statFive, 0);
+		dist += Mathf.Min(player.Sporty - two.Sporty, 0);
+		dist += Mathf.Min(player.Cute - two.Cute, 0);
+		dist += Mathf.Min(player.Artsy - two.Artsy, 0);
+		dist += Mathf.Min(player.Alternative - two.Alternative, 0);
+		dist += Mathf.Min(player.Classive - two.Classive, 0);
 		return dist;
 	}
 
 	public static Stats operator+(Stats one, Stats two)
 	{
 		Stats val = new Stats();
-		val.statOne = one.statOne + two.statOne;
-		val.statTwo = one.statTwo + two.statTwo;
-		val.statThree = one.statThree + two.statThree;
-		val.statFour = one.statFour + two.statFour;
-		val.statFive = one.statFive + two.statFive;
+		val.Sporty = one.Sporty + two.Sporty;
+		val.Cute = one.Cute + two.Cute;
+		val.Artsy = one.Artsy + two.Artsy;
+		val.Alternative = one.Alternative + two.Alternative;
+		val.Classive = one.Classive + two.Classive;
 		return val;
 	}
 

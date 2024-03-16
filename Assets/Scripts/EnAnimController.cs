@@ -10,6 +10,9 @@ public class EnAnimController : MonoBehaviour, IAnimObserver
 	[SerializeField] Image fill;
 
 	float targetFill;
+	float startFilling;
+	const float fillTime = 0.8f;
+	bool filling;
 
 	private void Awake()
 	{
@@ -21,6 +24,19 @@ public class EnAnimController : MonoBehaviour, IAnimObserver
         AnimStateController.Instance.AddAnimObserver(this);
     }
 
+	private void Update()
+	{
+		if(filling)
+		{
+			float fillAmmount = (Time.time - startFilling) / fillTime;
+			fill.fillAmount = fillAmmount;
+			if(fillAmmount >= targetFill)
+			{
+				filling = false;
+			}
+		}
+	}
+
 	public void ChangeAnim(AnimStateController.AnimState newAnimState)
 	{
 		switch(newAnimState)
@@ -30,6 +46,7 @@ public class EnAnimController : MonoBehaviour, IAnimObserver
 				break;
 			case AnimStateController.AnimState.MainMenu:
 				animator.SetTrigger("TriggerReset");
+				fill.fillAmount = 0;
 				break;
 		}
 	}
@@ -37,7 +54,8 @@ public class EnAnimController : MonoBehaviour, IAnimObserver
 	public void AnimateFill()
 	{
 		targetFill = GameManager.Instance.GetTargetFillAmmount();
-		fill.fillAmount = targetFill;
+		startFilling= Time.time;
+		filling = true;
 	}
 
 }
