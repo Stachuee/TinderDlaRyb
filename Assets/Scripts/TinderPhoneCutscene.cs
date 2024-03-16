@@ -24,11 +24,6 @@ public class TinderPhoneCutscene : MonoBehaviour
 		}
 	}
 
-	private void Start()
-	{
-		SetProfile(CharacterCreator.Instance.GetCurrentLove());
-	}
-
 	public void SetProfile(Character character)
 	{
 		profilePic.sprite = character.characterSprite;

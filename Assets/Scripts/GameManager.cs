@@ -61,6 +61,8 @@ public class GameManager : MonoBehaviour, IAnimObserver
 
 	public void StartGame()
 	{
+		if (AnimStateController.Instance.currentState != AnimStateController.AnimState.MainMenu) return;
+		CharacterCreator.Instance.CreateCharacter();
 		AnimStateController.Instance.ChangeAnimState(AnimStateController.AnimState.StartingAnim);
 	}
 

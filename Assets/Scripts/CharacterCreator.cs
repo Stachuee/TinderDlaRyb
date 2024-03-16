@@ -25,23 +25,20 @@ public class CharacterCreator : MonoBehaviour
 		avalibleFishes.AddRange(characterList);
 	}
 
-	private void Start()
-	{
-		currentCharacter = CreateCharacter();
-		TinderPhone.Instance.SetNewProfile(currentCharacter);
 
-	}
-
-	public Character CreateCharacter()
+	public void CreateCharacter()
 	{
-		if(avalibleFishes.Count > 0)
+		if(avalibleFishes.Count <= 0)
 		{
 			avalibleFishes.AddRange(characterList);
 		}
 		int id = Random.Range(0, avalibleFishes.Count);
 		FishesSO character = avalibleFishes[id];
 		avalibleFishes.RemoveAt(id);
-		return new Character(character);
+		currentCharacter = new Character(character);
+		Debug.Log(character.name);
+		TinderPhone.Instance.SetNewProfile(currentCharacter);
+		TinderPhoneCutscene.Instance.SetProfile(currentCharacter);
 	}
 
 	public Character GetCurrentLove()

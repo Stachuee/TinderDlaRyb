@@ -34,6 +34,9 @@ public class EnvironmentAnims : MonoBehaviour, IAnimObserver
 			case AnimStateController.AnimState.StartingAnim:
 				animator.SetTrigger("TriggerFirstCutscene");
 				break;
+			case AnimStateController.AnimState.MainMenu:
+				animator.SetTrigger("TriggerReset");
+				break;
 		}
 	}
 

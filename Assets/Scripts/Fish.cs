@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fish : MonoBehaviour
+public class Fish : MonoBehaviour, IAnimObserver
 {
     public static Fish Instance;
 
     [SerializeField] List<FishClothes> clothes;
+	[SerializeField] List<ClothesSO> basicClothes;
 
 	private void Awake()
 	{
@@ -45,5 +46,20 @@ public class Fish : MonoBehaviour
 			stats += c.GetItem().GetStats();
 		});
 		return stats;
+	}
+
+	public void ChangeAnim(AnimStateController.AnimState newAnimState)
+	{
+		switch(newAnimState)
+		{
+			case AnimStateController.AnimState.MainMenu:
+				int id = 0;
+				clothes.ForEach(c =>
+				{
+					c.SetItem(basicClothes[id]);
+					id++;
+				});
+				break;
+		}
 	}
 }
