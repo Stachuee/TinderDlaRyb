@@ -38,6 +38,7 @@ public class EnvironmentAnims : MonoBehaviour, IAnimObserver
 		{
 			case AnimStateController.AnimState.StartingAnim:
 				animator.SetTrigger("TriggerFirstCutscene");
+				LockWardrobe();
 				break;
 			case AnimStateController.AnimState.MainMenu:
 				animator.SetTrigger("TriggerReset");
@@ -88,5 +89,14 @@ public class EnvironmentAnims : MonoBehaviour, IAnimObserver
 	public bool CategoryLocked()
 	{
 		return elevatorLocked;
+	}
+
+	public void UnlockWardrobe()
+	{
+		Wardrobe.wardrobe.LockWardrobe(false);
+	}
+	public void LockWardrobe()
+	{
+		Wardrobe.wardrobe.LockWardrobe(true);
 	}
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Overall 7
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: bcf53556a0a6f9f4d9fa8f3c0f4ff29a, type: 3}
-  UIsprite: {fileID: -1909614796, guid: 9762260dfd8c0b948bc4c54282cc5c19, type: 3}
+  UIsprite: {fileID: 1289109518, guid: 9762260dfd8c0b948bc4c54282cc5c19, type: 3}
   stats:
     Sporty: 0
     Cute: 0.1

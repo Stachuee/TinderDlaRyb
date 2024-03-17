@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20b0d50fdeb40064c829177b96fe01c0, type: 3}
-  m_Name: Shoes 19
+  m_Name: Overall 8
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 757ce6eb9914feb49806d08126b6deb7, type: 3}
-  UIsprite: {fileID: -172777747, guid: d82f5aa0f63bf9846809e82cc02b75f1, type: 3}
+  sprite: {fileID: 21300000, guid: c3a188aa0caeedc46891634d36554814, type: 3}
+  UIsprite: {fileID: -1969653295, guid: c11d06e613cf1dd4d87891d0b5c3e5e7, type: 3}
   stats:
     Sporty: 0
-    Cute: 0
-    Artsy: 0
+    Cute: 0.8
+    Artsy: 0.2
     Alternative: 0
     Classive: 0
-  type: 3
+  type: 2

@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20b0d50fdeb40064c829177b96fe01c0, type: 3}
-  m_Name: Hair 6
+  m_Name: Hair 22
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 1bfadbc8817831c4abe41516706bf79d, type: 3}
-  UIsprite: {fileID: 61648667, guid: dcf969c4be2639a4db9cd91b7e5fe037, type: 3}
+  sprite: {fileID: 21300000, guid: 8c21f408693b63c41b520aad16bbf21f, type: 3}
+  UIsprite: {fileID: 2062915358, guid: a5314984b6e77694f8d71c3d42a4a824, type: 3}
   stats:
-    Sporty: 1
+    Sporty: 0
     Cute: 0
-    Artsy: 0
-    Alternative: 0
+    Artsy: 0.5
+    Alternative: 0.5
     Classive: 0
   type: 5

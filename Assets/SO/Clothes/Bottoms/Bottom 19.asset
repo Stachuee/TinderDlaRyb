@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bottom 19
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 60105c0c9a281e14590fe72194670238, type: 3}
-  UIsprite: {fileID: -668644484, guid: ec0dba4c206f89b488479d219ca4412f, type: 3}
+  UIsprite: {fileID: 1462361004, guid: ec0dba4c206f89b488479d219ca4412f, type: 3}
   stats:
     Sporty: 0
     Cute: 0

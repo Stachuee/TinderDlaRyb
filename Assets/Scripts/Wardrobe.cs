@@ -10,6 +10,8 @@ public class Wardrobe : MonoBehaviour, IAnimObserver
 
 	int current;
 
+	bool lockWardrobe;
+
 	private void Awake()
 	{
 		if(wardrobe == null)
@@ -22,16 +24,24 @@ public class Wardrobe : MonoBehaviour, IAnimObserver
 		}
 	}
 
+	private void Start()
+	{
+		AnimStateController.Instance.AddAnimObserver(this);
+	}
+
 
 	public void ChangeFloor(int change)
 	{
-		if (EnvironmentAnims.Instance.CategoryLocked()) return;
+		if (EnvironmentAnims.Instance.CategoryLocked() || lockWardrobe) return;
+
+
 		wardrobeSegments[current].gameObject.SetActive(false);
 		current += change;
+		int prev = current;
 		current = Mathf.Clamp(current, 0, wardrobeSegments.Count - 1);
 		wardrobeSegments[current].gameObject.SetActive(true);
 
-		EnvironmentAnims.Instance.ChangeFloors();
+		if(prev == current) EnvironmentAnims.Instance.ChangeFloors();
 	}
 
 	public void ChangeAnim(AnimStateController.AnimState newAnimState)
@@ -39,7 +49,13 @@ public class Wardrobe : MonoBehaviour, IAnimObserver
 		if(newAnimState == AnimStateController.AnimState.MainMenu)
 		{
 			wardrobeSegments[current].gameObject.SetActive(false);
+			current = 0;
 			wardrobeSegments[0].gameObject.SetActive(true);
 		}
+	}
+
+	public void LockWardrobe(bool value)
+	{
+		lockWardrobe = value;
 	}
 }
