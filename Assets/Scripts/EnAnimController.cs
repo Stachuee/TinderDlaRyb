@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,7 @@ public class EnAnimController : MonoBehaviour, IAnimObserver
 {
 	Animator animator;
 
-	[SerializeField] Image fill;
+	[SerializeField] TextMeshProUGUI score;
 
 	float targetFill;
 	float startFilling;
@@ -24,18 +25,6 @@ public class EnAnimController : MonoBehaviour, IAnimObserver
         AnimStateController.Instance.AddAnimObserver(this);
     }
 
-	private void Update()
-	{
-		if(filling)
-		{
-			float fillAmmount = (Time.time - startFilling) / fillTime;
-			fill.fillAmount = fillAmmount;
-			if(fillAmmount >= targetFill)
-			{
-				filling = false;
-			}
-		}
-	}
 
 	public void ChangeAnim(AnimStateController.AnimState newAnimState)
 	{
@@ -43,19 +32,12 @@ public class EnAnimController : MonoBehaviour, IAnimObserver
 		{
 			case AnimStateController.AnimState.EndAnim:
 				animator.SetTrigger("TriggerEnd");
+				score.text = (GameManager.Instance.GetTargetFillAmmount() * 10).ToString("F1");
 				break;
 			case AnimStateController.AnimState.MainMenu:
 				animator.SetTrigger("TriggerReset");
-				fill.fillAmount = 0;
 				break;
 		}
-	}
-
-	public void AnimateFill()
-	{
-		targetFill = GameManager.Instance.GetTargetFillAmmount();
-		startFilling= Time.time;
-		filling = true;
 	}
 
 }

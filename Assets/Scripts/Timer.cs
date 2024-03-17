@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour
 {
     public static Timer Instance;
 
-	[SerializeField] Slider timerSlider;
+	[SerializeField] Image timerSlider;
 
 	private void Awake()
 	{
@@ -28,6 +28,6 @@ public class Timer : MonoBehaviour
 
 	public void UpdateTimer()
 	{
-		timerSlider.value = GameManager.Instance.GetCurrentTimerProgress();
+		timerSlider.fillAmount = GameManager.Instance.GetCurrentTimerProgress();
 	}
 }

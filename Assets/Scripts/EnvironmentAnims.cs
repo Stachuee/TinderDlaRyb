@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class EnvironmentAnims : MonoBehaviour, IAnimObserver
 {
 	public static EnvironmentAnims Instance;
 	Animator animator;
+
+	[SerializeField] GameObject good;
+	[SerializeField] GameObject neutral;
+	[SerializeField] GameObject bad;
 
 	bool elevatorLocked;
 
@@ -39,7 +44,28 @@ public class EnvironmentAnims : MonoBehaviour, IAnimObserver
 				break;
 			case AnimStateController.AnimState.EndAnim:
 				animator.SetTrigger("TriggerEnd");
+				good.SetActive(false);
+				bad.SetActive(false);
+				neutral.SetActive(true);
 				break;
+		}
+	}
+
+	public void RevealMood()
+	{
+		float score = GameManager.Instance.GetTargetFillAmmount();
+		good.SetActive(false);
+		bad.SetActive(false);
+		neutral.SetActive(true);
+
+		if (score < 0.33f)
+		{
+			bad.SetActive(true);
+		}
+		else if (score > 0.66f)
+		{
+			good.SetActive(true);
+			neutral.SetActive(false);
 		}
 	}
 
