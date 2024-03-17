@@ -32,12 +32,18 @@ public class EnAnimController : MonoBehaviour, IAnimObserver
 		{
 			case AnimStateController.AnimState.EndAnim:
 				animator.SetTrigger("TriggerEnd");
-				score.text = (GameManager.Instance.GetTargetFillAmmount() * 10).ToString("F1");
+				StartCoroutine(SetScore());
 				break;
 			case AnimStateController.AnimState.MainMenu:
-				animator.SetTrigger("TriggerReset");
+				animator.SetTrigger("TriggerReset");	
 				break;
 		}
+	}
+
+	IEnumerator SetScore()
+	{
+		yield return new WaitForSeconds(.1f);
+		score.text = (GameManager.Instance.GetTargetFillAmmount() * 10).ToString("F1");
 	}
 
 }

@@ -28,9 +28,11 @@ public class MainGameAnimController : MonoBehaviour, IAnimObserver
 				break;
 			case AnimStateController.AnimState.MainMenu:
 				animator.SetBool("InGame", false);
+				animator.SetBool("OnPhone", false);
 				break;
 			case AnimStateController.AnimState.EndAnim:
 				animator.SetBool("InGame", false);
+				animator.SetBool("OnPhone", false);
 				break;
 		}
 	}

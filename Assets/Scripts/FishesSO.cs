@@ -27,6 +27,7 @@ public class FishesSO : ScriptableObject
 			output = pattern.Replace(output, @"\U000" + output.Substring(output.IndexOf(@"\u", StringComparison.Ordinal) + 2, 5), 1);
 		}
 
+		output = output.Replace("\\n", "\n");
 		return output;
 	}
 }

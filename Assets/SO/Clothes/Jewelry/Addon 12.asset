@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20b0d50fdeb40064c829177b96fe01c0, type: 3}
+  m_Name: Addon 12
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 06b8abbeac1d7d6489e6e2c2484d68c4, type: 3}
+  UIsprite: {fileID: 915621915, guid: c1d404e671363a346a4c646d50c19e4a, type: 3}
+  stats:
+    Sporty: 0
+    Cute: 0
+    Artsy: 0
+    Alternative: 0
+    Classive: 1
+  type: 4

@@ -29,6 +29,7 @@ public class StartingCutsceneAnim : MonoBehaviour, IAnimObserver
 
 	public void EndAnim()
 	{
+		Debug.Log("masd");
 		AnimStateController.Instance.ChangeAnimState(AnimStateController.AnimState.MainGame);
 	}
 

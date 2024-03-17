@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour, IAnimObserver
 		float curScore = Stats.Compare(Fish.Instance.GetFinalStats() / 5, CharacterCreator.Instance.GetCurrentLove().characterStats);
 		float lerpScore = Mathf.Lerp(0, maxScore,  Mathf.Clamp01(1 - (curScore / worstScore)));
 		score = lerpScore;
-		Debug.Log(lerpScore);
+		Debug.Log(score);
 	}
 
 	public void Exit()
@@ -80,6 +80,11 @@ public class GameManager : MonoBehaviour, IAnimObserver
 		return 1 - (timeRemain / timeToFinish);
 	}
 
+	public void QuitGame()
+	{
+		Application.Quit();
+	}
+
 	public void ChangeAnim(AnimStateController.AnimState newAnimState)
 	{
 		switch(newAnimState)
@@ -95,6 +100,7 @@ public class GameManager : MonoBehaviour, IAnimObserver
 
 	public float GetTargetFillAmmount()
 	{
+		Debug.Log(score + " " + maxScore);
 		return score / maxScore;
 	}
 }

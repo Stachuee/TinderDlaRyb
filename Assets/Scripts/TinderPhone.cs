@@ -33,5 +33,4 @@ public class TinderPhone : MonoBehaviour
         fishName.text = character.characterName;
         fishDesc.text = character.characterDesc;
     }
-
 }

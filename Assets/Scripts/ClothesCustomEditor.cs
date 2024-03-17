@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+#if UNITY_EDITOR
 public class ClothesCustomEditor : Editor
 {
 	//We connect the editor with the Weapon SO class
@@ -41,3 +42,4 @@ public class ClothesCustomEditor : Editor
 		}
 	}
 }
+#endif

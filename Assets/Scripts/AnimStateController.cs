@@ -25,6 +25,7 @@ public class AnimStateController : MonoBehaviour
 
 	public void ChangeAnimState(AnimState newAnimState)
 	{
+		Debug.Log(newAnimState);
 		if (newAnimState == currentState) return;
 		observers.ForEach(x => x.ChangeAnim(newAnimState));
 		currentState = newAnimState;

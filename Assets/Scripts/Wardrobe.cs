@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wardrobe : MonoBehaviour
+public class Wardrobe : MonoBehaviour, IAnimObserver
 {
     public static Wardrobe wardrobe;
 
@@ -32,5 +32,14 @@ public class Wardrobe : MonoBehaviour
 		wardrobeSegments[current].gameObject.SetActive(true);
 
 		EnvironmentAnims.Instance.ChangeFloors();
+	}
+
+	public void ChangeAnim(AnimStateController.AnimState newAnimState)
+	{
+		if(newAnimState == AnimStateController.AnimState.MainMenu)
+		{
+			wardrobeSegments[current].gameObject.SetActive(false);
+			wardrobeSegments[0].gameObject.SetActive(true);
+		}
 	}
 }

@@ -28,6 +28,6 @@ public class Timer : MonoBehaviour
 
 	public void UpdateTimer()
 	{
-		timerSlider.fillAmount = GameManager.Instance.GetCurrentTimerProgress();
+		timerSlider.fillAmount = 1 - GameManager.Instance.GetCurrentTimerProgress();
 	}
 }

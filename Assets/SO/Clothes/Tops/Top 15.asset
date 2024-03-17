@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20b0d50fdeb40064c829177b96fe01c0, type: 3}
   m_Name: Top 15
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: cda2ce3a820a22a438fe2d3026105800, type: 3}
-  UIsprite: {fileID: -1790545142, guid: 4fef4cfef8eff9543a625126d0cd49b9, type: 3}
+  sprite: {fileID: 21300000, guid: cac842832064545478d3639fd7541ac2, type: 3}
+  UIsprite: {fileID: -889616075, guid: 6869d8666ccf55541abec84f75ab1939, type: 3}
   stats:
-    Sporty: 0.9
+    Sporty: 0
     Cute: 0
-    Artsy: 0.1
+    Artsy: 1
     Alternative: 0
     Classive: 0
   type: 0
